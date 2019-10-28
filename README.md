@@ -4,7 +4,7 @@ Crack WPA/WPA2 Wi-Fi Routers with Airodump-ng and [Aircrack-ng](http://aircrack-
 
 This is a brief walk-through tutorial that illustrates how to crack Wi-Fi networks that are secured using weak passwords. It is not exhaustive, but it should be enough information for you to test your own network's security or break into one nearby. The attack outlined below is entirely passive (listening only, nothing is broadcast from your computer) and it is impossible to detect provided that you don't actually use the password that you crack. An optional active deauthentication attack can be used to speed up the reconnaissance process and is described at the [end of this document](#deauth-attack).
 
-If you are familiar with this process, you can skip the descriptions and jump to a list of the commands used at [the bottom](#list-of-commands).
+If you are familiar with this process, you can skip the descriptions and jump to a list of the commands used at [the bottom](#list-of-commands). For a variety of suggestions and alternative methods, see the [appendix](appendix.md). [neal1991](https://github.com/neal1991) and [tiiime](https://github.com/tiiime) have also graciously provided translations to [this document](README.zh.md) and the [appendix](appendix.zh.md) in Chinese if you prefer those versions.
 
 __DISCLAIMER: This software/tutorial is for educational purposes only. It should not be used for illegal activity. The author is not responsible for its use. Don't be a dick.__
 
@@ -13,7 +13,7 @@ __DISCLAIMER: This software/tutorial is for educational purposes only. It should
 This tutorial assumes that you:
 
 - Have a general comfortability using the command-line
-- Are running a debian-based linux distro (preferably [Kali linux](https://www.kali.org/))
+- Are running a debian-based linux distro, preferably [Kali linux](https://www.kali.org/) (OSX users see the [appendix](appendix.md))
 - Have [Aircrack-ng](http://aircrack-ng.org/) installed
 	- `sudo apt-get install aircrack-ng`
 - Have a wireless card that supports [monitor mode](https://en.wikipedia.org/wiki/Monitor_mode) (see [here](http://www.wirelesshack.org/best-kali-linux-compatible-usb-adapter-dongles-2016.html) for a list of supported devices)
@@ -244,8 +244,19 @@ cap2hccapx.bin capture/-01.cap capture/-01.hccapx
 HASH_FILE=hackme.hccapx POT_FILE=hackme.pot HASH_TYPE=2500 ./naive-hashcat.sh
 ```
 
+## Appendix
+
+The response to this tutorial was so great that I've added suggestions and additional material from community members as an [appendix](appendix.md). Check it out to learn how to:
+
+- Capture handshakes and crack WPA passwords on MacOS/OSX
+- Capture handshakes from every network around you with `wlandump-ng`
+- Use `crunch` to generate 100+GB wordlists on-the-fly
+- Spoof your MAC address with `macchanger`
+
+A [Chinese version](appendix.zh.md) of the appendix is also available.
+
 ## Attribution
 
 Much of the information presented here was gleaned from [Lewis Encarnacion's awesome tutorial](https://lewiscomputerhowto.blogspot.com/2014/06/how-to-hack-wpawpa2-wi-fi-with-kali.html). Thanks also to the awesome authors and maintainers who work on Aircrack-ng and Hashcat. 
 
-Shout out to [DrinkMoreCodeMore](https://www.reddit.com/user/DrinkMoreCodeMore), [hivie7510](https://www.reddit.com/user/hivie7510), [cprogrammer1994](https://github.com/cprogrammer1994), [0XE4](https://github.com/0XE4), [hartzell](https://github.com/hartzell), [zeeshanu](https://github.com/zeeshanu), [flennic](https://github.com/flennic), [bhusang](https://github.com/bhusang), [tversteeg](https://github.com/tversteeg), [gpetrousov](https://github.com/gpetrousov), [crowchirp](https://github.com/crowchirp) and [Shark0der](https://github.com/shark0der) who also provided suggestions and typo fixes on [Reddit](https://www.reddit.com/r/hacking/comments/6p50is/crack_wpawpa2_wifi_routers_with_aircrackng_and/) and GitHub. If you are interested in hearing some proposed alternatives to WPA2, check out some of the great discussion on [this](https://news.ycombinator.com/item?id=14840539) Hacker News post.
+Overwhelming thanks to [neal1991](https://github.com/neal1991) and [tiiime](https://github.com/tiiime) for translating this tutorial into [Chinese](README.zh.md). Further shout outs to [yizhiheng](https://github.com/yizhiheng), [hiteshnayak305](https://github.com/hiteshnayak305), [enilfodne](https://github.com/enilfodne), [DrinkMoreCodeMore](https://www.reddit.com/user/DrinkMoreCodeMore), [hivie7510](https://www.reddit.com/user/hivie7510), [cprogrammer1994](https://github.com/cprogrammer1994), [0XE4](https://github.com/0XE4), [hartzell](https://github.com/hartzell), [zeeshanu](https://github.com/zeeshanu), [flennic](https://github.com/flennic), [bhusang](https://github.com/bhusang), [tversteeg](https://github.com/tversteeg), [gpetrousov](https://github.com/gpetrousov), [crowchirp](https://github.com/crowchirp) and [Shark0der](https://github.com/shark0der) who also provided suggestions and typo fixes on [Reddit](https://www.reddit.com/r/hacking/comments/6p50is/crack_wpawpa2_wifi_routers_with_aircrackng_and/) and GitHub. If you are interested in hearing some proposed alternatives to WPA2, check out some of the great discussion on [this](https://news.ycombinator.com/item?id=14840539) Hacker News post.
